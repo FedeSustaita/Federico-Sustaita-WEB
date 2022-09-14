@@ -7,12 +7,25 @@
     @include reset
 }
 
+h2{
+    text-align: center;
+    margin: 20px;
+    font-family: roboto;
+}
+h3{
+    text-align: center;
+    font-family: roboto;
+}
+p{
+    font-family: monserrat;
+}
+
 body{
     color: #fff;
     background-color: rgb(29, 29, 29);
     display: grid;
-    grid-template-columns: 90% auto;
-    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
 }
 
 header{
@@ -36,61 +49,97 @@ header{
 main{
     grid-row: 2;
     grid-column: 1;
-
-        .contenedor{
+}
+.art-one{
+    display: grid;
+    grid-template-columns: 90% auto;
+    grid-template-rows: 70% auto;
+        .conten-main{
+            grid-column: 1;
             display: flex;
             justify-content: center;
-            margin: 30px;
-        
-
-        .name{
-            display: flex;
-            color: black;
-            background-color: #fff;
-            width: 70%;
-            height: 400px;
-                h1{
-                    margin: 10px;
-                    font-size: 110px;
-                    font-weight: bolder;
-                    color: rgb(60,204,132);
+                .contenedor{
+                    flex-direction: row;
+                    justify-content: center;        
+                    background-color: #fff;
+                    width: 60%;
+                    border-radius: 5px;
+                    margin: 20px;
+                        .name{
+                                h1{
+                                    margin: 10px;
+                                    font-size: 110px;
+                                    font-weight: bolder;
+                                    color: rgb(60,204,132);
+                                }
+                        }
+                        .text{
+                            grid-column: 1;
+                            width: 65%;
+                            background: rgb(60,204,132);
+                            background: linear-gradient(230deg, rgb(49, 163, 106) 0%, rgb(37, 167, 139) 100%); 
+                            border-radius: 5px;
+                                p{
+                                    margin: 0%;
+                                    padding: 5px;
+                                }
+                        }
                 }
         }
-    }
-    .text{
-        position: absolute;
-        top: 416px;
-        left: 100px;
-        width: 35%;
-        background: rgb(60,204,132);
-        background: linear-gradient(230deg, rgb(49, 163, 106) 0%, rgb(37, 167, 139) 100%); 
-        border-radius: 5px;
-            p{
-                padding: 5px;
-            }
-    }
-    .text-y{
-        position: absolute;
-        top: 255px;
-        left: 50px;
-        transform: rotate(270deg);
-        color: rgb(255, 255, 255);
-        font-size: 30px;
-            a{
-                text-decoration: none;
-                color: white;
-            }
-            a:hover{
-                color:  rgb(60,204,132);
-            }
-    }
+        aside{
+            grid-column: 2;
+            align-self: center;
+                p{
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 50px;
+                    text-align: center;
+                        i{
+                            font-size: 40px;
+                            margin-bottom: 20px;
+                            color: rgb(255, 255, 255);
+                        }
+                        .fa-instagram:hover{
+                            border-radius: 10px;
+                            background: rgb(64,93,230);
+                            background: linear-gradient(180deg, rgba(64,93,230,1) 0%, rgba(225,48,108,1) 35%, rgba(252,175,69,1) 100%) ;
+                        }
+                        .fa-facebook:hover{
+                            color: #4267B2;
+                        }
+                        .fa-linkedin:hover{
+                            color: #0e76a8;
+                        }
+                        .fa-whatsapp:hover{
+                            color: #25D366;
+                        }
+                        }
+                }
+}       
+
+.text-y{
+    position: absolute;
+    top:240px;
+    left: 55%;
+    grid-column: 2;
+    grid-row: 1/ span 2;
+    transform: rotate(270deg);
+    height: 85px;
+    width: 300px;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+        a{
+            text-decoration: none;
+            color: rgb(60,204,132);
+            font-weight: bolder;
+        }
+        a:hover{
+            color:  rgb(51, 167, 109);
+        }
 }
-h2{
-    text-align: center;
-}
-h3{
-    text-align: center;
-}
+        
+
+
 @mixin servicios {
     width: 70%;
     border-radius: 15px;
@@ -106,26 +155,41 @@ h3{
         .ser{
             display: flex;
             justify-content: center;
-            .servi-one{
-                border: rgb(57,24,203) solid;
-                background: rgb(57,24,203);
-                background: linear-gradient(230deg, rgba(57,24,203,1) 0%, rgba(206,75,241,1) 100%); 
-                grid-column: 1;
-                @include servicios()
-                
-            }
+                .servi-one{
+                    border: rgb(57,24,203) solid;
+                    grid-column: 1;
+                    @include servicios()
+                }
+                .servi-one:hover{
+                    background: rgb(57,24,203);
+                    background: linear-gradient(230deg, rgba(57,24,203,1) 0%, rgba(206,75,241,1) 100%); 
+
+                }
         
 
             .servi-two{
                 border: rgba(187,19,75,1) solid;
-                background: rgb(238,165,95);
-                background: linear-gradient(230deg, rgba(238,165,95,1) 0%, rgba(187,19,75,1) 100%); 
                 grid-column: 2;
                 @include servicios()
             }
+            .servi-two:hover{
+                background: rgb(238,165,95);
+                background: linear-gradient(230deg, rgba(238,165,95,1) 0%, rgba(187,19,75,1) 100%); 
+            }
         }
-    }
+}
 
+.porta{
+    display: flex;
+    justify-content: space-around;
+}
+
+.cuadrado{
+    width: 300px;
+    height: 300px;
+    background-color: azure;
+    border-radius: 20px;
+}
 
 .tecnologias{
     display: flex;
@@ -133,26 +197,75 @@ h3{
     margin-top: 20px;
         .fa-brands{
             font-size: 50px;
+            transition: all 0.3s;
+            width: 0px;
+
         }
         .fa-brands:hover{
-            font-size: 60px;
-            color: gray;
+            height: 150px;
+            color: rgb(60,204,132);
         }
+        ul{
+            display: inline-block;
+            position: relative;
+            list-style: none;
+        }
+        ul ul li{
+            display: none;
+            position: absolute;
+            width: 100%;
+            overflow: auto;
+        }
+        ul:hover ul li{
+            display: block;
+            width: 200px;
+            position: absolute;
+            top: 15px;
+            left: -75px;
+        }
+        ul:hover ul .punta-izq{
+            left: -10px;
+        }
+        ul:hover ul .punta-der{
+            left: -100px;
+        }
+        .info-desple{
+            padding: 0;
+        }
+    
 }
 
-footer{
-    grid-row: 2;
-    grid-column: 2;
+.form-text{
+    display: grid;
+    grid-template-columns: 50% auto;
+}
+.text-f{
+    grid-column: 1;
+    h3{
+        font-size: 30px;
+        color: #fff;
+    }
     p{
-        display: flex;
-        flex-direction: column;
-        margin-top: 50px;
-        position: fixed;
-        left: 95%;
-        top: 25%;
+        font-size: 17px;
+        color: #fff;
+        margin: 15px;
+    }
+}
+form{
+    grid-column: 2;
+    margin: 10px 20px;
+}
+footer{
+    grid-row: 3;
+    grid-column: 1;
+    h2{
+        margin-top: 10px;
+    }
+    p{
+        text-align: center;
             i{
-                font-size: 35px;
-                margin-bottom: 20px;
+                font-size: 40px;
+                margin: 10px 20px;
                 color: rgb(255, 255, 255);
             }
             .fa-instagram:hover{
@@ -169,182 +282,353 @@ footer{
             .fa-whatsapp:hover{
                 color: #25D366;
             }
+            }
     }
-}
-@media screen and (max-width:450px){      /*telefonos en modo vertical*/
-   body{
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: auto 1fr;
-   }
 
-    h1{
-        font-size: 50px !important;   
-        text-align: center;
-        margin: 0px !important;
-    }
-    .name{
-        width: 90% !important;
-        height: 250px !important;
-    }
-    .text{
-        top: 425px !important;
-        left: 10% !important;
-        width: 80% !important;
-    }
-    .text-y{
-        position: absolute;
-        top: 375px !important;
-        left: 10% !important;
-        text-align: center;
-        transform: rotate(0deg) !important;
-        }
-        .servi{
-            margin-top: 200px ;
-        }
-        .servicios{
-            display: grid;
-            grid-template-columns: 1fr;
-        }
-        .servi-one{
-            margin-bottom: 20px;
-        }
-        footer{
-            grid-row: 2;
-            grid-column: 1;
-            p{
+@media screen and(min-width:768px) and(max-width:1000px){
+    .art-one{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 70% auto auto;
+            .conten-main{
+                grid-column: 1;
                 display: flex;
-                flex-direction: row;
-                margin-top: 50px;
-                position: absolute;
-                left: 20%;
-                top: 30%;
-                i{
-                    margin: 10px;
-                    color: black;
-                }
-             }
+                justify-content: center;
+                .contenedor{
+                    width: 70%;
+                        .name{
+                                h1{
+                                    font-size: 90px;
+                                }
+                        }
+                        .text{
+                            grid-column: 1;
+                            width: 70%;
+                        }
+                    }
+}
+.text-y{
+
+    top:220px;
+    left: 60%;
+    grid-column: 2;
+    grid-row: 1/ span 2;
+    transform: rotate(270deg);
+    height: 85px;
+    width: 300px;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+        a{
+            text-decoration: none;
+            color: rgb(60,204,132);
+            font-weight: bolder;
+        }
+        a:hover{
+            color:  rgb(51, 167, 109);
         }
 }
 
-@media screen and (min-width:450px) and (max-width:562px){      /*telefonos en modo vertical*/
-    h1{
-        font-size: 60px !important;   
-        text-align: center;
-    }
-    .name{
-        width: 90% !important;
-        height: 250px !important;
-    }
-    .text{
-        top: 425px !important;
-        left: 20% !important;
-        width: 50% !important;
-    }
-    .text-y{
-        position: absolute !important;
-        top: 375px !important;
-        left: 20% !important;
-        font-size: 30px;
-        text-align: center;
-        transform: rotate(0deg) !important;
-        }
-        .servi{
-            margin-top: 200px ;
-        }
-        .servicios{
-            display: grid;
-            grid-template-columns: 1fr;
-        }
-        .servi-one{
-            margin-bottom: 20px;
-        }
-        footer{
-            p{
-                position: fixed;
-                left: 92% !important;
-                top: 25%;
+aside{
+    grid-column: 1;
+    grid-row: 3;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+        p{
+            display: flex;
+            flex-direction: row;
+            margin-top: 20px;
+            text-align: center;
+                i{
+                    margin: 0 20px;
+                }
+                }
             }
         }
 }
 
-@media screen and (min-width:562px) and (max-width:615px) {     /*telefonos en modo horizontal*/
-    h1{
-        font-size: 80px !important;   
+@media screen and (min-width:640px) and(max-width:768px){
+    .art-one{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+            .conten-main{
+                grid-column: 1;
+                display: flex;
+                justify-content: center;
+                .contenedor{
+                    width: 75%;
+                        .name{
+                                h1{
+                                    text-align: center;
+                                    font-size: 90px;
+                                }
+                        }
+                        .text{
+                            grid-column: 1;
+                            width: 100%;
+                        }
+                    }
+}
+.text-y{
+    position: static;
+    text-align: center;
+    transform: rotate(0deg);
+    width: 100%;
+    height: auto;
+}
+
+aside{
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+        p{
+            display: flex;
+            flex-direction: row;
+            margin-top: 20px;
+            text-align: center;
+                i{
+                    margin: 0 20px;
+                }
+                }
+            }
+        }
+ul:hover ul .punta-der{
+    left: -130px !important;
+}
+}
+
+@media screen and (min-width:450px) and(max-width:640px){
+    .art-one{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+            .conten-main{
+                grid-column: 1;
+                display: flex;
+                justify-content: center;
+                .contenedor{
+                    width: 75%;
+                        .name{
+                                h1{
+                                    text-align: center;
+                                    font-size: 70px;
+                                }
+                        }
+                        .text{
+                            grid-column: 1;
+                            width: 100%;
+                        }
+                    }
+}
+.text-y{
+    position: static;
+    text-align: center;
+    transform: rotate(0deg);
+    width: 100%;
+    height: auto;
+}
+
+aside{
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+        p{
+            display: flex;
+            flex-direction: row;
+            margin-top: 20px;
+            text-align: center;
+                i{
+                    margin: 0 20px;
+                }
+                }
+            }
+        }
+
+ul:hover ul .punta-der{
+    left: -130px !important;
+}
+.servicios{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+        .ser{
+            display: flex;
+            justify-content: center;
+                .servi-one{
+                    grid-row: 1;
+                    margin-bottom: 20px;
+                }
+            .servi-two{
+                grid-row: 2;
+            }
+        }
+}
+.cuadra{
+    display: flex;
+    justify-content: center;
+}
+.cuadrado{
+    margin: 20px;
+}
+.porta{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-text{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.text-f{
+    grid-column: 1;
+    h3{
+        font-size: 30px;
+        color: #fff;
+    }
+    p{
         text-align: center;
+        font-size: 17px;
+        color: #fff;
+        margin: 15px;
     }
-    .name{
-        width: 90% !important;
-        height: 250px !important;
-    }
-    .text{
-        top: 425px !important;
-        left: 20% !important;
-        width: 50% !important;
-    }
-    .text-y{
-        position: absolute !important;
-        top: 375px !important;
-        left: 20% !important;
-        font-size: 30px;
-        text-align: center;
-        transform: rotate(0deg) !important;
-        }
-        .servi{
-            margin-top: 200px ;
-        }
-        .servicios{
-            display: grid;
-            grid-template-columns: 1fr;
-        }
-        .servi-one{
-            margin-bottom: 20px;
-        }
+}
+form{
+    grid-column: 1;
+    margin: 10px 20px;
+}
 }
 
-@media screen and (min-width:615px) and (max-width:768px) {     /*tabletas pequeñas en modo vertical*/
-    h1{
-        font-size: 80px !important;   
-    }
-    .name{
-        width: 60%;
-    }
-    .text{
-        top: 416px;
-        left: 70px !important;
-        width: 50% !important;
-    }
-    .text-y{
-        position: absolute !important;
-        top: 255px;
-        left: -50px !important;
-        font-size: 30px;
-        }
-        .servi{
-            margin-top: 50px ;
-        }
+@media screen and (min-width:0px) and(max-width:450px){
+.art-one{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+            .conten-main{
+                grid-column: 1;
+                display: flex;
+                justify-content: center;
+                .contenedor{
+                    width: 75%;
+                        .name{
+                                h1{
+                                    text-align: center;
+                                    font-size: 60px;
+                                }
+                        }
+                        .text{
+                            grid-column: 1;
+                            width: 100%;
+                        }
+                    }
+}
+.text-y{
+    position: static;
+    text-align: center;
+    transform: rotate(0deg);
+    width: 100%;
+    height: auto;
 }
 
-@media screen and (min-width:769px) and (max-width:1000px){    /*tablets en modo vertical*/
-    .text{
-        top: 416px;
-        left: 70px !important;
-        width: 40% !important;
-    }
-    .text-y{
-        position: absolute;
-        top: 255px;
-        left: -25px !important;
-        font-size: 30px;
-        }
-        
-        .servi{
-            margin-top: 50px ;
-        }
-
+aside{
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+        p{
+            display: flex;
+            flex-direction: row;
+            margin-top: 20px;
+            text-align: center;
+                i{
+                    margin: 0 20px;
+                }
+                }
+            }
 }
 
+ul:hover ul .punta-der{
+    left: -130px !important;
+}
+.servicios{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+        .ser{
+            display: flex;
+            justify-content: center;
+                .servi-one{
+                    grid-row: 1;
+                    margin-bottom: 20px;
+                }
+            .servi-two{
+                grid-row: 2;
+            }
+        }
+}
+.cuadra{
+    display: flex;
+    justify-content: center;
+}
+.cuadrado{
+    margin: 20px;
+}
+.porta{
+    display: flex;
+    flex-direction: column;
+}
 
-
-
+.tecnologias{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+        ul:hover ul li{
+            display: block;
+            width: 200px;
+            position: absolute;
+            top: 15px;
+            left: -80px;
+        }
+        ul:hover ul .punta-izq{
+            left: -80px;
+        }
+        ul:hover ul .punta-der{
+            left: -80px !important;
+        }
+        .info-desple{
+            padding: 0;
+        }
     
+}
+.tecno{
+    text-align: center;
+}
+
+.form-text{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.text-f{
+    grid-column: 1;
+    h3{
+        font-size: 30px;
+        color: #fff;
+    }
+    p{
+        text-align: center;
+        font-size: 17px;
+        color: #fff;
+        margin: 15px;
+    }
+}
+form{
+    grid-column: 1;
+    margin: 10px 20px;
+}
+    
+}
