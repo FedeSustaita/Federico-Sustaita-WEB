@@ -40,19 +40,22 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
+                        <li class="nav-item nav-itemh">
                             <a class="nav-link active" aria-current="page" href="#">HOME</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">CONTACTO</a>
+                        <li class="nav-item nav-itemc">
+                            <a class="nav-link active" href="./index.html#contacto">CONTACTO</a>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item nav-itemt">
+                            <a class="nav-link active" href="./index.html#tecno">TECNOLOGIAS</a>
+                        </li>
+                        <li class="nav-item dropdown nav-itemi">
                             <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 INFORMACION
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">SOBRE MI</a></li>
-                                <li><a class="dropdown-item" href="#">SERVICIOS</a></li>
+                                <li><a class="dropdown-item" href="./index.html#porta">PORTAFOLIOS</a></li>
+                                <li><a class="dropdown-item" href="./index.html#servi">SERVICIOS</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -72,7 +75,7 @@
                     
                     <div class="text">
                         <p>
-                            Hola! Encantado de tenerte por aquí, espero que tu experiencia por acá sea de lo más agradable... Si quieres saber más de mi dale click a este enlace
+                            Hola! Encantado de tenerte por aquí, espero que tu experiencia por acá sea de lo más agradable... Si quieres saber más de mi dale click a este <a href="">enlace</a>
                         </p>
                     </div>
                 
@@ -86,14 +89,13 @@
             <aside>
                 <p>
                     <a href=""><i class="fa-brands fa-instagram"></i></a>
-                    <a href=""><i class="fa-brands fa-facebook"></i></a>
                     <a href=""><i class="fa-brands fa-linkedin"></i></a>
                     <a href=""><i class="fa-brands fa-whatsapp"></i></a>
                 </p>
             </aside>
         </article>
         <article>
-            <div class="servi">
+            <div class="servi" id="servi">
                 <h2>
                     SERVICIOS
                 </h2>
@@ -101,7 +103,7 @@
                 <div class="ser">
                     <div class="servi-one">
                         <h3>
-                            Diseño Web
+                            <i class="fa-solid fa-compass-drafting"></i> Diseño Web
                         </h3>
                         <p>
                             Desarrollaré el sitio web que necesites para que cumpla con todos los objetivos de tu empresa. Obtén más visitas/clientes, vende en línea, obtén cotizaciones en tu sitio y destaca entre tus competidores con tu imponente sitio web.
@@ -111,7 +113,7 @@
                 <div class="ser">
                     <div class="servi-two">
                         <h3>
-                            SEO
+                            <i class="fa-brands fa-google"></i> SEO
                         </h3>
                         <p>
                             No solo se trata de hacer tu web y ya está, no. Hacer tu web es el inicio de todo, con un buen plan de SEO (Search Engine Optimization) posicionaré tu web entre los primeros resultados de Google, démosle popularidad a tu marca y despega ya.
@@ -121,7 +123,7 @@
             </div>
             </div>
         </article>
-        <div class="portafolios">
+        <div class="portafolios" id="porta">
             <h2>
                 PORTAFOLIOS
             </h2>
@@ -129,17 +131,20 @@
                 <div class="porta">
                     <div class="cuadra">
                         <div class="cuadrado">
+                            <img src="./img/Captura.PNG" alt="captura training clothes">
                         </div>
-                    </div>
-                    <div class="cuadra">
-                        <div class="cuadrado">
-                        </div>
+                        <h4 class="boton">
+                            Training Clothes
+                        </h4>
+                        <p class="boton">
+                            <button type="button" class="btn btn-outline-aqua">Visita el sitio</button>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
         <article>
-            <h2>
+            <h2 id="tecno">
                 TECNOLOGIAS
             </h2>
             <div class="tecnologias">
@@ -203,7 +208,7 @@
                     <div class="node">
                         <ul class="info-desple">
                             <li>
-                                <i class="fa-brands fa-node"></i>
+                                <i class="fa-brands fa-node-js"></i>
                                 <ul>
                                     <li>
                                         <p>
@@ -219,9 +224,9 @@
                             <li>
                                 <i class="fa-brands fa-bootstrap"></i>
                                 <ul>
-                                    <li class="punta-der">
+                                    <li class="punta-derec">
                                         <p>
-                                            Bootstrap es un framework CSS y Javascript diseñado para la creación de interfaces limpias y con un diseño responsive.
+                                            Bootstrap es una biblioteca multiplataforma de código abierto para diseño de sitios y aplicaciones web.
                                         </p>
                                     </li>
                                 </ul>
@@ -232,7 +237,7 @@
             </div>
         </article>
         <article>
-            <h2>
+            <h2 id="contacto">
                 CONTACTO
             </h2>
             <div class="form-text">
@@ -257,7 +262,7 @@
                         <label for="exampleFormControlTextarea1" class="form-label">Comentario</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Mensaje"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-outline-light">ENVIAR</button>
+                    <button type="submit" class="btn btn-outline-aqua">ENVIAR</button>
                 </form>
             </div>
         </article>
@@ -268,7 +273,6 @@
         </h2>
         <p>
             <a href=""><i class="fa-brands fa-instagram"></i></a>
-            <a href=""><i class="fa-brands fa-facebook"></i></a>
             <a href=""><i class="fa-brands fa-linkedin"></i></a>
             <a href=""><i class="fa-brands fa-whatsapp"></i></a>
         </p>
