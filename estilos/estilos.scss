@@ -196,23 +196,29 @@ main{
             display: flex;
             justify-content: center;
                 .servi-one{ /*diseño de web*/
-                    border: rgb(57,24,203) solid;
+                    border: $color-predet solid;
                     grid-column: 1;
-                    @include servicios()
+                    @include servicios
                 }
+                
                 .servi-one:hover{
-                    background: rgb(57,24,203);
-                    background: linear-gradient(230deg, rgba(57,24,203,1) 0%, rgba(206,75,241,1) 100%); 
-
+                    background: $color-predet;
+                    background: linear-gradient(230deg, $color-predet 0%, rgb(38, 133, 112) 100%); 
+                }
+                h3{
+                    margin-top: 10px;
+                }
+                p{
+                    margin: 10px;
                 }
             .servi-two{ /*diseño seo*/
-                border: rgba(187,19,75,1) solid;
+                border: $color-predet solid;
                 grid-column: 2;
                 @include servicios()
             }
             .servi-two:hover{
-                background: rgb(238,165,95);
-                background: linear-gradient(230deg, rgba(238,165,95,1) 0%, rgba(187,19,75,1) 100%); 
+                background: $color-predet;
+                background: linear-gradient(230deg, $color-predet 0%, rgb(38, 133, 112) 100%); 
             }
         }
 }
@@ -266,11 +272,12 @@ main{
             position: absolute;
             top: 15px;
             left: -75px;
+            font-size: 16px;
         }
         ul:hover ul .punta-izq{
             left: -10px;
         }
-        ul:hover ul .punta-der{
+        ul:hover ul .punta-derec{
             left: -100px;
         }
         .info-desple{
@@ -416,38 +423,43 @@ aside{
                         .text{
                             grid-column: 1;
                             width: 100%;
+                            border-radius: 0%;
                         }
-                    }
-}
-.text-y{
-    position: static;
-    text-align: center;
-    transform: rotate(0deg);
-    width: 100%;
-    height: auto;
-}
-
-aside{
-    grid-column: 1;
-    grid-row: 2;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-        p{
-            display: flex;
-            flex-direction: row;
-            margin-top: 20px;
-            text-align: center;
-                i{
-                    margin: 0 20px;
-                }
                 }
             }
+        .text-y{
+            position: static;
+            text-align: center;
+            transform: rotate(0deg);
+            width: 100%;
+            height: auto;
         }
-ul:hover ul .punta-der{
-    left: -130px !important;
-}
-}
+
+        aside{
+            grid-column: 1;
+            grid-row: 2;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+                p{
+                    display: flex;
+                    flex-direction: row;
+                    margin-top: 20px;
+                    text-align: center;
+                        i{
+                            margin: 0 20px;
+                        }
+                        }
+                    }
+                }
+        ul:hover ul li{
+            font-size: 14px;
+        }
+        ul:hover ul .punta-derec{
+            font-size: 14px;
+            left: -140px !important;
+        }
+    }
 
 @media screen and (min-width:450px) and(max-width:640px){ /*telefonos en modo horizontal*/
     .art-one{
@@ -469,6 +481,7 @@ ul:hover ul .punta-der{
                         .text{
                             grid-column: 1;
                             width: 100%;
+                            border-radius: 0%;
                         }
                     }
 }
@@ -545,24 +558,29 @@ ul:hover ul .punta-der{
     flex-direction: column;
     margin-top: 30px;
     text-align: center;
+        .fa-brands:hover{
+            height: 0px;
+            color: rgb(60,204,132);
+        }
         ul:hover ul li{
+
             display: block;
-            width: 200px;
+            width: 140px;
             position: absolute;
-            top: 15px;
-            left: -80px;
+            top: -50px;
+            left: 65px;
         }
         ul:hover ul .punta-izq{
-            left: -80px;
+            left: 65px;
         }
-        ul:hover ul .punta-der{
-            left: -80px !important;
+        ul:hover ul .punta-derec{
+            top: -120px;
+            left: 65px !important;
         }
         .info-desple{
             padding: 0;
         }
 }
-
 .form-text{
     display: grid;
     grid-template-columns: 1fr;
@@ -583,10 +601,13 @@ ul:hover ul .punta-der{
 form{
     grid-column: 1;
     margin: 10px 20px;
+    .mb-3{
+        color: white;
+    }
 }
 }
 
-@media screen and (min-width:0px) and(max-width:450px){/*telefonos de pantallas finas en modo vertical*/
+@media screen and (min-width:350px) and(max-width:450px){/*telefonos de pantallas finas en modo vertical*/
 .art-one{
         display: grid;
         grid-template-columns: 1fr;
@@ -606,34 +627,35 @@ form{
                         .text{
                             grid-column: 1;
                             width: 100%;
+                            border-radius: 0%;
                         }
                     }
-}
-.text-y{
-    position: static;
-    text-align: center;
-    transform: rotate(0deg);
-    width: 100%;
-    height: auto;
-}
-
-aside{
-    grid-column: 1;
-    grid-row: 2;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-        p{
-            display: flex;
-            flex-direction: row;
-            margin-top: 20px;
-            text-align: center;
-                i{
-                    margin: 0 20px;
-                }
-                }
+    }
+            .text-y{
+                position: static;
+                text-align: center;
+                transform: rotate(0deg);
+                width: 100%;
+                height: auto;
             }
-}
+
+            aside{
+                grid-column: 1;
+                grid-row: 2;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                    p{
+                        display: flex;
+                        flex-direction: row;
+                        margin-top: 20px;
+                        text-align: center;
+                            i{
+                                margin: 0 20px;
+                            }
+                            }
+                        }
+        }
 
 ul:hover ul .punta-der{
     left: -130px !important;
@@ -686,7 +708,7 @@ ul:hover ul .punta-der{
             color: rgb(60,204,132);
         }
         ul:hover ul li{
-
+            font-size: 12px;
             display: block;
             width: 140px;
             position: absolute;
@@ -697,7 +719,7 @@ ul:hover ul .punta-der{
             left: 55px;
         }
         ul:hover ul .punta-derec{
-            top: -120px;
+            top: -70px;
             left: 55px !important;
         }
         .info-desple{
@@ -728,4 +750,146 @@ form{
     margin: 10px 20px;
 }
     
+}
+
+@media screen and (min-width:0px) and(max-width:350px){
+    .art-one{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+            .conten-main{
+                grid-column: 1;
+                display: flex;
+                justify-content: center;
+                .contenedor{
+                    width: 85%;
+                        .name{
+                                h1{
+                                    text-align: center;
+                                    font-size: 60px;
+                                }
+                        }
+                        .text{
+                            grid-column: 1;
+                            width: 100%;
+                            border-radius: 0%;
+                        }
+                    }
+    }
+            .text-y{
+                position: static;
+                text-align: center;
+                transform: rotate(0deg);
+                width: 100%;
+                height: auto;
+            }
+
+            aside{
+                grid-column: 1;
+                grid-row: 2;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                    p{
+                        display: flex;
+                        flex-direction: row;
+                        margin-top: 20px;
+                        text-align: center;
+                            i{
+                                margin: 0 20px;
+                            }
+                            }
+                        }
+        }
+
+ul:hover ul .punta-der{
+    left: -130px !important;
+}
+.servicios{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+        .ser{
+            display: flex;
+            justify-content: center;
+                .servi-one{
+                    grid-row: 1;
+                    margin-bottom: 20px;
+                }
+            .servi-two{
+                grid-row: 2;
+            }
+        }
+}
+.folio{
+    display: flex;
+    justify-content: center;
+}
+.cuadra{
+    border: solid white;
+    width: 95%;
+
+    .cuadrado{
+        display: flex;
+        justify-content: center;
+    }
+    img{
+        width: 80%;
+        height: auto;
+        margin: 10px;
+    }
+    h4{
+        margin: 10px;
+    }
+}
+
+.tecno{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    text-align: center;
+        .fa-brands:hover{
+            height: 0px;
+            color: rgb(60,204,132);
+        }
+        ul:hover ul li{
+            font-size: 12px;
+            display: block;
+            width: 120px;
+            position: absolute;
+            top: -50px;
+            left: 57px;
+        }
+        ul:hover ul .punta-izq{
+            left: 55px;
+        }
+        ul:hover ul .punta-derec{
+            top: -70px;
+            left: 55px !important;
+        }
+        .info-desple{
+            padding: 0;
+        }
+}
+.form-text{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.text-f{
+    grid-column: 1;
+    h3{
+        font-size: 30px;
+        color: #fff;
+    }
+    p{
+        text-align: center;
+        font-size: 17px;
+        color: #fff;
+        margin: 15px;
+    }
+}
+form{
+    grid-column: 1;
+    margin: 10px 20px;
+}   
 }
